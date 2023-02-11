@@ -1,0 +1,34 @@
+@media print {
+    #accordionSidebar,
+    form,
+    button,
+    select,
+    a {
+        visibility: hidden;
+        display: none;
+        margin: 0px;
+    }
+    @page {
+        margin: 1cm;
+    }
+
+    * {
+        color: black;
+    }
+    /* @page {
+        margin: 0.5cm;
+    }
+
+    @page :left {
+        margin: 0.5cm;
+    }
+
+    @page :right {
+        margin: 0.8cm;
+    } */
+
+    /* target the first page only */
+    /* @page :first {
+        margin: 1cm 1cm;
+    } */
+}

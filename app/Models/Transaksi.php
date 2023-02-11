@@ -23,7 +23,7 @@ class Transaksi extends Model
       });
     });
     $query->when($filters['d'] ?? false, function ($query, $search) {
-      return $query->whereBetween('tanggal', 'like', '%' . $search . '%');
+      return $query->where('tanggal', 'like', '%' . $search . '%');
     });
   }
 

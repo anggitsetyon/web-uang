@@ -25,6 +25,10 @@
                     {!! Form::number('nominal', $row->nominal, ['class' => 'form-control', 'placeholder' => 'Contoh: 10000', 'required']) !!}
                 </div>
                 <div class="mb-3">
+                    {!! Form::label('tanggal', 'Tanggal') !!}
+                    {!! Form::date('tanggal', $row->tanggal, ['class' => 'form-control', 'required']) !!}
+                </div>
+                <div class="mb-3">
                     {!! Form::label('keterangan', 'Keterangan') !!}
                     {!! Form::text('keterangan', $row->keterangan, ['class' => 'form-control', 'required']) !!}
                 </div>

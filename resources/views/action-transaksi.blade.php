@@ -14,11 +14,11 @@
                 </div>
                 <div class="mb-3">
                     {!! Form::label('jenis_saldo', 'Jenis Saldo') !!}
-                    {!! Form::select('jenis_saldo', $selectJenisSaldo, $row->jenis_saldo, ['class' => 'form-select', 'placeholder' => 'Pilih Jenis Saldo', 'required']) !!}
+                    {!! Form::select('jenis_saldo', $selectJenisSaldo, $row->jenis_saldo_id, ['class' => 'form-select', 'placeholder' => 'Pilih Jenis Saldo', 'required']) !!}
                 </div>
                 <div class="mb-3">
                     {!! Form::label('lokasi', 'Lokasi') !!}
-                    {!! Form::text('lokasi', '', ['class' => 'form-control', 'placeholder' => 'Pilih Lokasi', 'required']) !!}
+                    {!! Form::text('lokasi', $row->lokasi, ['class' => 'form-control', 'placeholder' => 'Pilih Lokasi', 'required']) !!}
                 </div>
                 <div class="mb-3">
                     {!! Form::label('nominal', 'Nominal') !!}

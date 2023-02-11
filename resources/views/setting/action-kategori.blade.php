@@ -13,8 +13,8 @@
                     {!! Form::text('jenis_akun', $row->jenis_akun,['class' => 'form-control', 'placeholder' => 'Pilih Jenis Akuntansi','required']) !!}
                 </div>
                 <div class="mb-3">
-                    {!! Form::label('jenis_rekap', 'Jenis Saldo') !!}
-                    {!! Form::select('jenis_rekap', $selectJenisRekap, $row->jenis_rekap_id, ['class' => 'form-select', 'placeholder' => 'Pilih Jenis Rekap', 'required']) !!}
+                    {!! Form::label('jenis_rekap_id', 'Jenis Saldo') !!}
+                    {!! Form::select('jenis_rekap_id', $selectJenisRekap, $row->jenis_rekap_id, ['class' => 'form-select', 'placeholder' => 'Pilih Jenis Rekap', 'required']) !!}
                 </div>
           </div>
           <div class="modal-footer">

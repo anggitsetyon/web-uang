@@ -13,8 +13,8 @@
                     {!! Form::select('kategori_id', $selectJenisAkun, $row->kategori_id,['class' => 'form-select', 'placeholder' => 'Pilih Jenis Akuntansi','required']) !!}
                 </div>
                 <div class="mb-3">
-                    {!! Form::label('jenis_saldo', 'Jenis Saldo') !!}
-                    {!! Form::select('jenis_saldo', $selectJenisSaldo, $row->jenis_saldo_id, ['class' => 'form-select', 'placeholder' => 'Pilih Jenis Saldo', 'required']) !!}
+                    {!! Form::label('jenis_saldo_id', 'Jenis Saldo') !!}
+                    {!! Form::select('jenis_saldo_id', $selectJenisSaldo, $row->jenis_saldo_id, ['class' => 'form-select', 'placeholder' => 'Pilih Jenis Saldo', 'required']) !!}
                 </div>
                 <div class="mb-3">
                     {!! Form::label('lokasi', 'Lokasi') !!}

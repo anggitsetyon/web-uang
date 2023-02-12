@@ -48,7 +48,6 @@
                 $no++
             @endphp
             @endforeach
-
     </tbody>
 </table>
 </div>

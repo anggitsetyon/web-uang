@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="delete{{$row->id}}" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  {{-- <div class="modal fade" id="delete{{$row->id}}" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
@@ -35,7 +35,6 @@
           <div class="modal-body">
               {!! Form::model($user, [ 'method' => 'delete','route' => ['users.delete', $row->id] ]) !!}
                   <h4 class="text-center">Yakin ingin menghapus user {{ $row->name }}?</h4>
-                  {{-- <h5 class="text-center">Name: {{$row->firstname}} {{$row->lastname}}</h5> --}}
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
@@ -44,4 +43,4 @@
           </div>
       </div>
     </div>
-  </div>
+  </div> --}}

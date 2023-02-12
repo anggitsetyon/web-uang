@@ -31,11 +31,11 @@ class KategoriController extends Controller
         return back();
     }
  
-    public function delete($id)
-    {
-        $del_kategori = Kategori::find($id);
-        $del_kategori->delete();
+    // public function delete($id)
+    // {
+    //     $del_kategori = Kategori::find($id);
+    //     $del_kategori->delete();
   
-        return back();
-    }
+    //     return back();
+    // }
 }

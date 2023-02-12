@@ -36,13 +36,13 @@ class AkunController extends Controller
         return back();
     }
 
-    public function delete($id)
-    {
-        $del_user = user::find($id);
-        $del_user->delete();
+    // public function delete($id)
+    // {
+    //     $del_user = user::find($id);
+    //     $del_user->delete();
 
-        return back();
-    }
+    //     return back();
+    // }
     public function role($id)
     {
         $user = User::find($id);

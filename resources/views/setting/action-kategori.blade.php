@@ -1,4 +1,4 @@
-<!-- Edit Modal -->
+
 <div class="modal fade" id="edit{{$row->id}}" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">

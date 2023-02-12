@@ -58,7 +58,6 @@ Route::controller(AkunController::class)
         Route::get('/', 'index');
         Route::post('/user/save', 'save')->name('save');
         Route::post('/user/update/{id}', 'update')->name('update');
-        Route::delete('/user/delete/{id}', 'delete')->name('delete');
         Route::get('/role/{id}', 'role')->name('role');
         Route::post('/user/{id}/role', 'assignRole')->name('role.save');
         Route::delete('/user/{user}/role/{role}', 'deleteRole')->name('role.delete');

@@ -34,16 +34,12 @@
                 <td class="text-center" style="width: 50px">{{ $no }}</td>
                 <td>{{ $row->jenis_akun }}</td>
                 <td>{{ $row->jenisRekap->jenis_rekap }}</td>
-                @can('edit kategori','delete kategori')
+                @can('edit kategori')
                 <td style="width: 150px" class="d-flex justify-content-evenly">
                     <a href="#edit{{$row->id}}" data-bs-toggle="modal" class="btn btn-warning">
                       <img src="https://img.icons8.com/external-becris-lineal-becris/64/000000/external-edit-mintab-for-ios-becris-lineal-becris.png"
                       style="width: 20px; height: 20px;"/>
                     </a> 
-                    <a href="#delete{{$row->id}}" data-bs-toggle="modal" class="btn btn-danger">
-                      <img src="https://img.icons8.com/external-becris-lineal-becris/64/null/external-trash-mintab-for-ios-becris-lineal-becris.png"
-                      style="width: 20px; height: 20px"/>
-                    </a>
                     @include('setting.action-kategori')
                   </td>
                 @endcan

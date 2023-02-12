@@ -39,10 +39,10 @@
                       <img src="https://img.icons8.com/external-becris-lineal-becris/64/000000/external-edit-mintab-for-ios-becris-lineal-becris.png"
                       style="width: 20px; height: 20px;"/>
                     </a> 
-                    <a href="#delete{{$row->id}}" class="btn btn-danger" data-bs-toggle="modal">
+                    {{-- <a href="#delete{{$row->id}}" class="btn btn-danger" data-bs-toggle="modal">
                       <img src="https://img.icons8.com/external-becris-lineal-becris/64/null/external-trash-mintab-for-ios-becris-lineal-becris.png"
                       style="width: 20px; height: 20px"/>
-                    </a>
+                    </a> --}}
                     @include('setting.action-user')
                   </td>
             </tr>

@@ -67,7 +67,7 @@
       <td>{{ $row->lokasi }}</td>
       <td class="w-0">{{ $row->keterangan }}</td>
       <td>{{ Carbon\Carbon::parse($row->tanggal)->translatedFormat('j F Y') }}</td>
-      @can('create user', $post)
+      @can('create user')
       <td>{{ $row->user->name }}</td>
       @endcan
       {{-- <td>{{ $row->created_at->translatedformat('D MMMM') }}</td> --}}

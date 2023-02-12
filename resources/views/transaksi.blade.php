@@ -50,6 +50,9 @@
             <th>Lokasi</th>
             <th>Keterangan</th>
             <th>Tanggal</th>
+            @can('create user')                
+            <th>User</th>
+            @endcan
             <th class="text-center">Aksi</th>
         </tr>
     </div>
@@ -64,6 +67,9 @@
       <td>{{ $row->lokasi }}</td>
       <td class="w-0">{{ $row->keterangan }}</td>
       <td>{{ Carbon\Carbon::parse($row->tanggal)->translatedFormat('j F Y') }}</td>
+      @can('create user', $post)
+      <td>{{ $row->user->name }}</td>
+      @endcan
       {{-- <td>{{ $row->created_at->translatedformat('D MMMM') }}</td> --}}
       <td class="d-flex justify-content-evenly">
         <a href="#edit{{$row->id}}" data-bs-toggle="modal" class="btn btn-warning">

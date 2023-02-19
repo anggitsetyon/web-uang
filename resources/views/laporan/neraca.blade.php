@@ -152,6 +152,26 @@
         @endif
         @endforeach
         @foreach ($neraca as $row)
+        <tr> @if ($row->jenis_rekap == 'Beban')
+            <td class="border border-right"> 
+                @if ($row->jenis_rekap == 'Beban') 
+                {{ $row->jenis_akun }}
+                @endif
+            </td>
+            <td class="text-right border"> 
+                @if ($row->jenis_rekap == 'Beban' && $row->jenis_saldo == 'Pertambahan')
+                Rp {{number_format($row->nominal,0,'','.')}}
+                @php
+                $debet += $row->nominal
+                @endphp
+                @endif
+            </td>
+            <td class="text-right">
+            </td>
+        </tr>
+        @endif
+        @endforeach
+        @foreach ($neraca as $row)
         <tr> @if ($row->jenis_rekap == 'Kewajiban')
             <td class="border border-right"> 
                 @if ($row->jenis_rekap == 'Kewajiban') 

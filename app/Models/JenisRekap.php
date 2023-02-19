@@ -12,7 +12,7 @@ class JenisRekap extends Model
 
     public function kategori()
     {
-        return $this->hasMany(kategori::class);
+        return $this->hasMany(Kategori::class);
     }
 
 }

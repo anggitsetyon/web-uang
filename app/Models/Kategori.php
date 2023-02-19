@@ -12,7 +12,7 @@ class Kategori extends Model
 
     public function transaksi()
     {
-        return $this->hasMany(transaksi::class);
+        return $this->hasMany(Transaksi::class);
     }
     public function jenisRekap()
     {

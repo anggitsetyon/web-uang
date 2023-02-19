@@ -27,7 +27,7 @@ class TransaksiController extends Controller
             'title' => 'Transaksi Keuangan',
             'transaksi' => transaksi::latest()->filter(request(['akun', 'd']))->paginate(10)->withQueryString(),
             'selectJenisSaldo' => JenisSaldo::all()->pluck('jenis_saldo', 'id')->unique(),
-            'selectLokasi' => transaksi::all()->pluck('lokasi', 'id')->unique(),
+            'selectLokasi' => transaksi::all()->pluck('lokasi', 'lokasi')->unique(),
             'selectJenisAkun' => Kategori::all()->pluck('jenis_akun', 'id')->unique(),
             'kategori' => Kategori::all()->unique(),
 

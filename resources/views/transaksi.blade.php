@@ -29,6 +29,14 @@
                           </select>
                         </div>
                         <div class="m-1">
+                          <select data-column="0" name="lokasi" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <option class="" value="" selected>Lokasi</option>
+                            @foreach ($SelectLokasi as $row)
+                                <option value="{{ $row }}">{{ $row }}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                        <div class="m-1">
                           <input type="date" name="d" class="form-control form-control-sm">
                           </select>    
                         </div>

@@ -64,29 +64,19 @@
             <td></td>
         </tr>
         @foreach ($neraca as $row)
-        <tr> @if ($row->jenis_akun != 'Kas')
+        <tr> @if ($row->jenis_akun != 'Kas' && $row->jenis_rekap == 'Aset')
             <td class="border border-right"> 
-                @if ($row->jenis_akun != 'Kas')
+                @if ($row->jenis_akun != 'Kas' && $row->jenis_rekap == 'Aset')
                 {{ $row->jenis_akun }}
                 @endif
             </td>
             <td class="text-right border"> 
-                @if ($row->jenis_rekap == 'Aset' && $row->jenis_akun != 'Kas')
+                @if ($row->jenis_rekap == 'Aset' && $row->jenis_akun != 'Kas' && $row->jenis_saldo == 'Pertambahan')
                 Rp {{number_format($row->nominal,0,'','.')}}
                 @php
                 $debet += $row->nominal
                 @endphp
                 @elseif ($row->jenis_rekap == 'Beban')
-                Rp {{number_format($row->nominal,0,'','.')}}
-                @php
-                $debet += $row->nominal
-                @endphp
-                @elseif ($row->jenis_rekap == 'Pendapatan' && $row->jenis_saldo == 'Pengurangan')
-                Rp {{number_format($row->nominal,0,'','.')}}
-                @php
-                $debet += $row->nominal
-                @endphp
-                @elseif ($row->jenis_rekap == 'Modal' && $row->jenis_saldo == 'Pengurangan')
                 Rp {{number_format($row->nominal,0,'','.')}}
                 @php
                 $debet += $row->nominal
@@ -99,12 +89,85 @@
                 @php
                 $kredit += $row->nominal
                 @endphp
-                @elseif ($row->jenis_rekap == 'Pendapatan' && $row->jenis_saldo == 'Pertambahan')
+                @elseif ($row->jenis_rekap == 'Aset' && $row->jenis_saldo == 'Pengurangan')
                 Rp {{number_format($row->nominal,0,'','.')}}
                 @php
                 $kredit += $row->nominal
                 @endphp
-                @elseif ($row->jenis_rekap == 'Kewajiban')
+                @endif
+            </td>
+        </tr>
+        @endif
+        @endforeach
+        @foreach ($neraca as $row)
+        <tr> @if ($row->jenis_rekap == 'Modal')
+            <td class="border border-right">
+                @if ($row->jenis_rekap == 'Modal') 
+                {{ $row->jenis_akun }}
+                @endif
+            </td>
+            <td class="text-right border"> 
+                @if ($row->jenis_rekap == 'Modal' && $row->jenis_saldo == 'Pengurangan')
+                Rp {{number_format($row->nominal,0,'','.')}}
+                @php
+                $debet += $row->nominal
+                @endphp
+                @endif
+            </td>
+            <td class="text-right">
+                @if ($row->jenis_rekap == 'Modal' && $row->jenis_saldo == 'Pertambahan')
+                Rp {{number_format($row->nominal,0,'','.')}}
+                @php
+                $kredit += $row->nominal
+                @endphp
+                @endif
+            </td>
+        </tr>
+        @endif
+        @endforeach
+        @foreach ($neraca as $row)
+        <tr> @if ($row->jenis_rekap == 'Pendapatan')
+            <td class="border border-right"> 
+                @if ($row->jenis_rekap == 'Pendapatan') 
+                {{ $row->jenis_akun }}
+                @endif
+            </td>
+            <td class="text-right border"> 
+                @if ($row->jenis_rekap == 'Pendapatan' && $row->jenis_saldo == 'Pengurangan')
+                Rp {{number_format($row->nominal,0,'','.')}}
+                @php
+                $debet += $row->nominal
+                @endphp
+                @endif
+            </td>
+            <td class="text-right">
+                @if ($row->jenis_rekap == 'Pendapatan' && $row->jenis_saldo == 'Pertambahan')
+                Rp {{number_format($row->nominal,0,'','.')}}
+                @php
+                $kredit += $row->nominal
+                @endphp
+                @endif
+            </td>
+        </tr>
+        @endif
+        @endforeach
+        @foreach ($neraca as $row)
+        <tr> @if ($row->jenis_rekap == 'Kewajiban')
+            <td class="border border-right"> 
+                @if ($row->jenis_rekap == 'Kewajiban') 
+                {{ $row->jenis_akun }}
+                @endif
+            </td>
+            <td class="text-right border"> 
+                @if ($row->jenis_rekap == 'Kewajiban' && $row->jenis_saldo == 'Pengurangan')
+                Rp {{number_format($row->nominal,0,'','.')}}
+                @php
+                $debet += $row->nominal
+                @endphp
+                @endif
+            </td>
+            <td class="text-right">
+                @if ($row->jenis_rekap == 'Kewajiban' && $row->jenis_saldo == 'Pertambahan')
                 Rp {{number_format($row->nominal,0,'','.')}}
                 @php
                 $kredit += $row->nominal

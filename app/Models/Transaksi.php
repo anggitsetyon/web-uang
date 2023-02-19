@@ -29,14 +29,14 @@ class Transaksi extends Model
 
   public function kategori()
   {
-    return $this->belongsTo(kategori::class);
+    return $this->belongsTo(Kategori::class);
   }
   public function jenisSaldo()
   {
-    return $this->belongsTo(jenissaldo::class);
+    return $this->belongsTo(JenisSaldo::class);
   }
   public function user()
   {
-    return $this->belongsTo(user::class);
+    return $this->belongsTo(User::class);
   }
 }

@@ -25,6 +25,9 @@ class Transaksi extends Model
     $query->when($filters['d'] ?? false, function ($query, $search) {
       return $query->where('tanggal', 'like', '%' . $search . '%');
     });
+    $query->when($filters['lokasi'] ?? false, function ($query, $search) {
+      return $query->where('lokasi', 'like', '%' . $search . '%');
+    });
   }
 
   public function kategori()
